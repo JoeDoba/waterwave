@@ -23,17 +23,16 @@ passport.use(
             callbackURL: '/auth/google/callback',
             proxy: true
         }, 
-        (accessToken, refreshToken, profile, done) => {
-            User.findOne({googleID: profile.id}).then((existingUser) => {
-                if (existingUser) {
-                    // We have user record
-                    done(null, existingUser);
-                } else {
-                    // We dont have user record;
-                    new User({googleID: profile.id, name: profile.name}).save().then((newUser) => done(null, newUser));
-                }
-            });
-            console.log(profile);
+        async (accessToken, refreshToken, profile, done) => {
+            const existingUser = await User.findOne({googleID: profile.id});
+            if (existingUser) {
+                // We have user record
+                done(null, existingUser);
+            } else {
+                // We dont have user record;
+                const newUser = await new User({googleID: profile.id, name: profile.name}).save();
+                done(null, newUser);
+            }
         }
     )
 );
@@ -45,17 +44,16 @@ passport.use(
             clientSecret: keys.githubClientSecret,
             callbackURL: "/auth/github/callback",
         }, 
-        (accessToken, refreshToken, profile, done) => {
-            User.findOne({githubID: profile.id}).then((existingUser) => {
-                if (existingUser) {
-                    // We have user record
-                    done(null, existingUser);
-                } else {
-                    // We dont have user record;
-                    new User({githubID: profile.id, name: profile.displayName}).save().then((newUser) => done(null, newUser));
-                }
-            });
-            console.log(profile)
+        async (accessToken, refreshToken, profile, done) => {
+            const existingUser = await User.findOne({githubID: profile.id});
+            if (existingUser) {
+                // We have user record
+                done(null, existingUser);
+            } else {
+                // We dont have user record;
+                const newUser = await new User({githubID: profile.id, name: profile.displayName}).save();
+                done(null, newUser);
+            }
         }
     )
 );
