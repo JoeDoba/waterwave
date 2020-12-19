@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "push": "git push heroku master"
   },
   "author": "",
   "license": "ISC",
