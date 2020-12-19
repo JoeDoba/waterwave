@@ -12,7 +12,7 @@
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
     "push1": "git push heroku master",
-    "push2": "git push waterwave_github master", 
+    "push2": "git push waterwave_github master",
     "dev": "concurrently \"npm run server\"  \"npm run client\"",
     "push": "concurrently \"npm run push1\" \"npm run push2\""
   },
@@ -25,6 +25,7 @@
     "mongoose": "^5.11.8",
     "nodemon": "^2.0.6",
     "passport": "^0.4.1",
+    "passport-github2": "^0.1.12",
     "passport-google-oauth20": "^2.0.0"
   }
 }
