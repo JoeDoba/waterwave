@@ -9,12 +9,17 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js",
-    "push": "git push heroku master"
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "push1": "git push heroku master",
+    "push2": "git push waterwave_github master", 
+    "dev": "concurrently \"npm run server\"  \"npm run client\"",
+    "push": "concurrently \"npm run push1\" \"npm run push2\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^5.3.0",
     "cookie-session": "^1.4.0",
     "express": "^4.17.1",
     "mongoose": "^5.11.8",
