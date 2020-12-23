@@ -25,7 +25,10 @@ module.exports = (app) => {
 
     app.get(
         '/auth/github/callback', 
-        passport.authenticate('github')
+        passport.authenticate('github'),
+        (req, res) => {
+            res.redirect('/surveys');
+        }
     );
 
     app.get(

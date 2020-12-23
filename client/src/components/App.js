@@ -3,8 +3,9 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {fetchUser} from '../actions';
 
-import Header from './Header'
-import { bindActionCreators } from 'redux';
+import './css/Landing.css'
+
+import Header from './Header';
 import Landing from './Landing';
 const Dashboard = () => <h2>Dashboard</h2>
 const SurveyNew = () => <h2>SurveyNew</h2>
@@ -12,13 +13,13 @@ const SurveyNew = () => <h2>SurveyNew</h2>
 
 class App extends Component {
     componentDidMount() {
-        console.log(this.props.fetchUser());
-        console.log(this.props)
+        this.props.fetchUser();
+        // console.log(this.props)
     }
     
     render() {
         return (
-            <div className="container">
+            <div className="block">
                 <BrowserRouter>
                     <div>
                         <Header />

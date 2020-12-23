@@ -4,11 +4,11 @@ const Landing = () => {
     return (
         <div style={{textAlign: 'center'}}>
             <h1>
-                Water wave!
+                Spread as you can see.
             </h1>
-            spread as you can see.
         </div>
     );
 };
+
 
 export default Landing;
