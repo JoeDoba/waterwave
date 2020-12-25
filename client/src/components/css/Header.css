@@ -5,7 +5,7 @@
     padding-right: 15px;
 }
 
-.right > li:hover {
+.right > li:hover, a >  li:hover{
     background-color: #0288d1;
     cursor: pointer;
 }
