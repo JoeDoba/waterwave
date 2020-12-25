@@ -1,0 +1,27 @@
+#Landing {
+    font-family: Arial, Helvetica, sans-serif
+}
+#dashboard_header {
+    /* text-align: center; */
+    margin: 10px;
+    font-size: 20pt;
+    font-weight: 600;
+}
+
+#profile_header {
+    /* text-align: center; */
+    margin: 10px;
+    font-size: 18pt;
+    font-weight: 600;
+}
+
+#credit {
+    color: green;
+    margin-left: 10px;
+}
+
+.profile_terms {
+    margin: 10px;
+    font-weight: 600;
+    font-size: 12pt;
+}

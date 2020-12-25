@@ -3,11 +3,9 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {fetchUser} from '../actions';
 
-import './css/Landing.css'
-
 import Header from './Header';
 import Landing from './Landing';
-const Dashboard = () => <h2 className="container">Dashboard</h2>
+import Dashboard from './Dashboard';
 const SurveyNew = () => <h2>SurveyNew</h2>
 
 

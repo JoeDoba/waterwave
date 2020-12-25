@@ -29,25 +29,11 @@ class Header extends Component {
         }
     }
 
-    renderProfile() {
-        switch (this.props.auth) {
-            case null:
-                return null;
-            case false:
-                return null;
-            default: return (
-                <div style={UserBoard}>
-                    <header>Profile</header>
-                </div>
-            );
-        }
-    }
-
     Close = () => {this.setState({popshow: false})};
     Open = () => {this.setState({popshow: true})};
 
     render() {
-        // console.log(this.state)
+        // console.log(this.props)
         return (
             <div>
                 <nav>
@@ -59,21 +45,10 @@ class Header extends Component {
                         </ul>         
                     </div>
                 </nav>
-                {this.renderProfile()}
                 <PopWindow show={this.state.popshow} Close={this.Close} Open={this.Open} />  
             </div>
         );
     }
-}
-
-const UserBoard = {
-    width: '200px',
-    height: '300px',
-    float: 'right',
-    margin: '20px',
-    borderRadius: '15px',
-    backgroundColor: '#80deea',
-    boxShadow: '2px 2px 1px #607d8b'
 }
 
 function mapStateToProps(state) {

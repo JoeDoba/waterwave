@@ -5,14 +5,7 @@
     padding-right: 15px;
 }
 
-li:hover {
+.right > li:hover {
     background-color: #0288d1;
     cursor: pointer;
-}
-
-header {
-    text-align: center;
-    margin: 10px;
-    font-size: large;
-    font-weight: 500;
 }

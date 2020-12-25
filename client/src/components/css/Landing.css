@@ -6,3 +6,8 @@
     background-size: cover;
     background-position: center;
 }
+
+html {
+    min-width: 600px;
+}
+
