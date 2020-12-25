@@ -27,6 +27,7 @@
     "passport": "^0.4.1",
     "passport-github2": "^0.1.12",
     "passport-google-oauth20": "^2.0.0",
+    "stripe": "^8.129.0",
     "styled-components": "^5.2.1"
   }
 }

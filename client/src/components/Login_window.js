@@ -34,7 +34,9 @@ export default class PopWindow extends Component {
         return (
             <div style={OVERLAY_STYLE}>
                 <div style={MAIN_STYLE} ref={this.setWrapperRef}>
-                    <nav className="nav-wrapper" style={{padding: '10px', borderRadius: '15px 15px 0px 0px'}}><h5>Login</h5></nav>
+                    <nav className="nav-wrapper" style={{padding: '10px', borderRadius: '15px 15px 0px 0px'}}>
+                        <h5>Login</h5>
+                    </nav>
                     <div style={{height: '10px', backgroundColor: '#007ac1'}}></div>
                     <div>
                         <button type="submit" >
