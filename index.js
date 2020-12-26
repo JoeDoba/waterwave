@@ -26,7 +26,7 @@ require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
 
 // If runing under production modol
-if (process.env.NODE_NEW === 'production') {
+if (process.env.NODE_ENV === 'production') {
     // Express will serve up production assets like our main.js file, or main.css file!
     app.use(express. static('client/build'));
     // Epress will serve up the index.html file if it donesn't recognize the route.
