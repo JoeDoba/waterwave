@@ -18,7 +18,7 @@ class Dashboard extends Component {
                     <header id="profile_header">Profile</header>
                     <div style={{height: '2px', backgroundColor: '#007ac1'}}></div>
                     <ul>
-                        <li className="profile_terms">User Name:</li>
+                        <li className="profile_terms">User Name: {this.props.auth.name}</li>
                         <li className="profile_terms">Credit Available: <span id="credit">${this.props.auth.credits}</span></li>
                     </ul>
                 </div>
@@ -45,7 +45,7 @@ const DASHBOARD = {
 }
 
 const PROFILE = {
-    width: '10%',
+    // width: '12%',
     height: '200px',
     minWidth: '200px',
     margin: '20px',

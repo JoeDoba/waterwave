@@ -9,3 +9,7 @@
     background-color: #0288d1;
     cursor: pointer;
 }
+
+.nav-wrapper {
+    background-color: #29b6f6 !important;
+}

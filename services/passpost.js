@@ -24,14 +24,14 @@ passport.use(
             proxy: true
         }, 
         async (accessToken, refreshToken, profile, done) => {
-            // console.log(profile)
+            console.log(profile)
             const existingUser = await User.findOne({googleID: profile.id});
             if (existingUser) {
                 // We have user record
                 done(null, existingUser);
             } else {
                 // We dont have user record;
-                const newUser = await new User({googleID: profile.id, name: profile.giveName}).save();
+                const newUser = await new User({googleID: profile.id, name: profile.displayName}).save();
                 done(null, newUser);
             }
         }
@@ -44,9 +44,9 @@ passport.use(
             clientID: keys.githubClientID,
             clientSecret: keys.githubClientSecret,
             callbackURL: "/auth/github/callback",
-            proxy: true
         }, 
         async (accessToken, refreshToken, profile, done) => {
+            console.log(profile)
             const existingUser = await User.findOne({githubID: profile.id});
             if (existingUser) {
                 // We have user record
