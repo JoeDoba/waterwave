@@ -14,7 +14,8 @@
     "push1": "git push heroku master",
     "push2": "git push waterwave_github master",
     "dev": "concurrently \"npm run server\"  \"npm run client\"",
-    "push": "concurrently \"npm run push1\" \"npm run push2\""
+    "push": "concurrently \"npm run push1\" \"npm run push2\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",
