@@ -13,7 +13,7 @@ const surveySchema = new Schema({
     // Relationship with User collection, "_user" is optional named.
     _user: {type: Schema.Types.ObjectId, ref: 'User'},
 
-    dataSent: Date,
+    dateSent: Date,
     lastResponded: Date,
 });
 
