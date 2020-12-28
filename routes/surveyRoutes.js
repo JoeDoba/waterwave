@@ -9,7 +9,7 @@ module.exports = (app) => {
         '/api/surveys',
         requireLogin,
         checkCredit,
-        (req, res) => {
+        async (req, res) => {
             const {title, subject, body, recipients} = req.body;
             const newSurvey = new Survey({
                 title: title,
@@ -21,7 +21,22 @@ module.exports = (app) => {
                 dateSent: Date.now(),
             });
             const newMailer = new Mailer(newSurvey, surveyTemplate(newSurvey));
-            newMailer.send();
+            try {
+                await newMailer.send();
+                await newSurvey.save();
+                req.user.credits -= 1;
+                const user = await req.user.save();
+                res.send(user);
+            } catch (err) {
+                res.status(422).send(err);
+            }
+        }
+    );
+
+    app.get(
+        '/api/surveys/thanks',
+        (req, res) => {
+            res.send('Thank you for your feedback!');
         }
     );
 };
