@@ -48,3 +48,88 @@ p {
 p:hover {
     color: white;
 }
+
+.new_survey_terms {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    padding: 0px;
+}
+label 				 {
+    color:#999; 
+    font-size: 20px;
+    font-weight: normal;
+    pointer-events: none;
+    position: absolute;
+    left: 0px;
+    top: 10px;
+    transition: 0.2s ease all; 
+    -moz-transition: 0.2s ease all; 
+    -webkit-transition: 0.2s ease all;
+}
+.survey_input1 {
+    font-size:18px;
+    display:block;
+    margin: 0 auto;
+    width: 100%;
+    border:none;
+    border-bottom:1px solid #757575;
+}
+.survey_input1:focus { 
+    outline:none; 
+    border:none;
+}
+.survey_input1:focus ~ label, .survey_input1:valid ~ label {
+    top:-20px;
+    font-size:16px;
+    color:#03a9f4;
+}
+.survey_input1:focus ~ .bar:before, .survey_input1:focus ~ .bar:after {
+    width:50%;
+}
+.bar { 
+    position: relative;; 
+    display:block;
+}
+.bar:before, .bar:after 	{
+  content:'';
+  height: 2px;
+  width: 0px;
+  bottom: 7px; 
+  position:absolute;
+  background:#03a9f4; 
+  transition:0.2s ease all; 
+  -moz-transition:0.4s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+
+.survey_input2 {
+    font-size:18px;
+    display:block;
+    margin: 0 auto;
+    width: 100%;
+    border: 1px solid #757575;
+}
+
+.survey_input2:focus {
+    border:none;
+    outline: 2px solid #03a9f4; 
+}
+
+#review > li {
+    font-size:16px;
+    color:#03a9f4;
+}
+
+#review > p {
+    margin: 5px auto;
+}

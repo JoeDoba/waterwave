@@ -2,14 +2,12 @@
     font-family: Arial, Helvetica, sans-serif
 }
 #dashboard_header {
-    /* text-align: center; */
     margin: 10px;
     font-size: 20pt;
     font-weight: 600;
 }
 
 #profile_header {
-    /* text-align: center; */
     margin: 10px;
     font-size: 18pt;
     font-weight: 600;
@@ -24,4 +22,10 @@
     margin: 10px;
     font-weight: 600;
     font-size: 12pt;
+}
+
+.btn-floating {
+    position: absolute;
+    right: 20px;
+    bottom: 0px;
 }

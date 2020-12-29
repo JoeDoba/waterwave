@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-import PopWindow from './Login_window';
+import LoginWindow from './Login_window';
 import Payment from './Payment';
 import './css/Header.css';
 const L = styled(Link)`margin-left: 10px;`; 
@@ -45,7 +45,7 @@ class Header extends Component {
                         </ul>         
                     </div>
                 </nav>
-                <PopWindow show={this.state.popshow} Close={this.Close} Open={this.Open} />  
+                <LoginWindow show={this.state.popshow} Close={this.Close} Open={this.Open} />
             </div>
         );
     }

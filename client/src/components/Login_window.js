@@ -4,7 +4,7 @@ import github_logo from './pictures/github_logo.png';
 import Button from 'react-bootstrap/esm/Button';
 import './css/Login_pop.css';
 
-export default class PopWindow extends Component {
+export default class LoginWindow extends Component {
     constructor(props) {
         super(props);
         this.setWrapperRef = this.setWrapperRef.bind(this);
