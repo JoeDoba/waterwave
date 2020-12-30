@@ -8,10 +8,10 @@ class SurveyReview extends Component {
         return (
             <div>
                 <ul id="review">
-                    <li>Survey Title:</li>
-                    <p>{this.props.formValues.title}</p>
                     <li>Subject:</li>
                     <p>{this.props.formValues.subject}</p>
+                    <li>Survey Title:</li>
+                    <p>{this.props.formValues.title}</p>
                     <li>Recipients:</li>
                     <p>{this.props.formValues.recipients}</p>
                     <li>Main Body:</li>
@@ -41,7 +41,6 @@ class SurveyReview extends Component {
                         <div style={{textAlign: "center"}}>
                             <Button  onClick={this.props.Prev} className="blue"style={BUTTON}>Back</Button>
                             <Button onClick={this.Submit} className="green" style={BUTTON}>Submit</Button>
-                            {/* <Button onClick={this.props.Close} className="red right" style={BUTTON}>Cancel</Button> */}
                         </div>
                     </div>
                 </div>
@@ -51,6 +50,9 @@ class SurveyReview extends Component {
 }
 
 function mapStateToProps(state) {
+    if (!state.form.surveyForm) {
+        return
+    }
     return {formValues: state.form.surveyForm.values}
 }
 

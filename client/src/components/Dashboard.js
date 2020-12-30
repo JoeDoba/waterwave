@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import SurveyWindow from './surveys/Survey_window';
 import SurveyReview from './surveys/Survey_review';
+import SurveyList from './surveys/Survey_list';
 import './css/Dashboard.css';
 
 class Dashboard extends Component {
@@ -25,7 +26,10 @@ class Dashboard extends Component {
                 <div style={DASHBOARD}>
                     <header id="dashboard_header">Dashboard</header>
                     <div style={{height: '2px', backgroundColor: '#007ac1'}}></div>
-                    <button onClick={() => this.nextPage()} className="btn-floating btn-large waves-effect waves-light"><i className="material-icons">add</i></button>
+                    <div style={SURVEYS}><SurveyList /></div>
+                    <div style={{height: '100px'}}>
+                        <button onClick={() => this.nextPage()} className="btn-floating btn-large waves-effect waves-light"><i className="material-icons">add</i></button>
+                    </div>                   
                 </div>
                 <div style={PROFILE}>
                     <header id="profile_header">Profile</header>
@@ -35,6 +39,7 @@ class Dashboard extends Component {
                         <li className="profile_terms">Credit Available: <span id="credit">${this.props.auth.credits}</span></li>
                     </ul>
                 </div>
+                
                 <SurveyWindow show={this.state.showWindowNum} Close={this.closePage} Next={this.nextPage} onSubmit={this.nextPage} />
                 <SurveyReview show={this.state.showWindowNum} Close={this.closePage} Next={this.nextPage} Prev={this.previousPage} />  
             </div>
@@ -50,7 +55,7 @@ export default connect(mapStateToProps)(Dashboard);
 
 const DASHBOARD = {
     width: '50%',
-    height: '500px',
+    // height: '500px',
     margin: '20px auto',
     backgroundColor: '#b3e5fc',
     boxShadow: '1px 2px 2px #607d8b',
@@ -67,4 +72,9 @@ const PROFILE = {
     boxShadow: '1px 2px 2px #607d8b',
     display: 'inline-block',
     float: 'right',
+}
+
+const SURVEYS = {
+    margin: '0px auto',
+    overFlow: 'auto'
 }

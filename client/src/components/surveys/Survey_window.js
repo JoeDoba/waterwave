@@ -9,8 +9,8 @@ class SurveyWindow extends Component {
     renderFields() {
         return (
             <div>
-                <Field type="text" name="title" component={SurveyField}  label="Survey Title" />
                 <Field type="text" name="subject" component={SurveyField}  label="Subject" />
+                <Field type="text" name="title" component={SurveyField}  label="Survey Title" />  
                 <Field type="text" name="recipients" component={SurveyField} disabled={true} label="Recipients" />
                 <Field type="text" name="body" component={SurveyWindowArea} label=""/>       
             </div>

@@ -29,3 +29,36 @@
     right: 20px;
     bottom: 0px;
 }
+.card {
+    background-color: #26a69a;
+    border-radius: 10px;
+}
+
+.cardBot {
+    padding: 10px;
+    border-top: 2px solid gray
+}
+
+.cardTop {
+    padding: 10px;
+}
+
+.cardBot > p {
+    display: inline-block;
+    margin: 5px 10px;
+    color: #ffca28;
+    position: relative;
+    top: 2px;
+}
+
+.cardTop > p {
+    display: block;
+    margin: 5px 0px;
+    color: white;
+}
+
+.cardTitle {
+    font-size: 24px;
+    color: white;
+    margin: 10px auto 20px auto;
+}
